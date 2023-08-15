@@ -1,0 +1,26 @@
+Substring: Devuelve el subconjunto de una cadena basado en la posición inicial especificada.
+
+Split: Divide un objeto de tipo String en un array (vector) de cadenas mediante la separación de la cadena en subcadenas.
+
+subSequence: Este metodo devuelve una secuencia de caracteres de una cadena de texto.
+
+trim: Elimina los espacios en blanco en ambos extremos del string.
+
+toLowerCase: Devuelve el valor de la cadena convertida a minúsculas.
+
+toUpperCase: Devuelve el valor de la cadena convertida a mayúsculas.
+
+indexOf: Devuelve el índice, dentro del objeto String que realiza la llamada, de la primera ocurrencia del valor especificado, comenzando la búsqueda desde indiceDesde ; o -1 si no se encuentra dicho valor.
+
+lastIndexOf: Devuelve el último índice en el que un cierto elemento puede encontrarse en el arreglo, ó -1 si el elemento no se encontrara. El arreglo es recorrido en sentido contrario, empezando por el índice fromIndex.
+
+contains: Determinar si una cadena está incluida en otra cadena.
+
+replace: Cambiar un carácter por otro dentro de una cadena.
+
+replaceAll: Busca todas las apariciones de una expresión regular en una cadena y las cambia por un nuevo valor.
+
+replaceFirst: El método reemplaza la primera subcadena de la cadena dada que coincide con esa expresión regular.
+
+
+

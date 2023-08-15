@@ -1,0 +1,6 @@
+¿Cuál es la capacidad inicial del siguiente stringbuilder?
+
+StringBuilder sb = new StringBuilder("Able was I ere I saw
+Elba.");
+
+Respuesta: El Valor seria de al menos 27 caracteres.

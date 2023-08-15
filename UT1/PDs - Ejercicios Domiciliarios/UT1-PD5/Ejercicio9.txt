@@ -1,0 +1,5 @@
+a) Devuelve el valor 28
+
+b) Devuelve la letras s.
+
+c)  "hannah.charAt(15)"

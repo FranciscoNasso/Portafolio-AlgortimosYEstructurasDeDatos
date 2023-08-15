@@ -1,0 +1,7 @@
+a) System.out.println ("ik");
+
+b) System.out.println (dirigible);
+
+ System.out.println (membrillo + " sup");
+
+ System.out.println ("muaa-ja-ja-ja");

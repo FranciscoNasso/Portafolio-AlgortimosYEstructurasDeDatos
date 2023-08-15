@@ -1,0 +1,13 @@
+setLength: Permite al programador incrementar o decrementar la longitud de un objeto StringBuilder.
+
+ensureCapacity: Incrementa la capacidad del ArrayList y asegura que puede almancenar, al menos, la capacidad indicada como parámetro.
+
+append: Agregar texto o la representación de cadena de un objeto al final de una cadena representada por el objeto StringBuilder actual.
+
+insert: Agrega uno o varios registros a una tabla.
+
+delete: Ejecuta el borrado de un fichero o directorio instanciado en un objeto File.
+
+deleteCharAt: Elimina un carácter en particular de una palabra, frase o texto.
+
+reverse: Invertir una string de Java de manera eficiente.

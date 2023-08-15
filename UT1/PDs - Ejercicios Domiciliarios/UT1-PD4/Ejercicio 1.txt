@@ -1,0 +1,13 @@
+a)
+	public int y = 3;
+
+b)
+	public static int x = 7;
+
+
+c)
+	a.y = 5
+	b.y = 6
+	a.x = 2
+	b.x = 2
+	IdentifyMyParts.x = 2
