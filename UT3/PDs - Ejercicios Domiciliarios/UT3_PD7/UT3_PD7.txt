@@ -1,0 +1,81 @@
+#1
+//Union
+Se debera retornar un conjunto que posea la union logica entre un conjunto A y un conjunto B. El conjunto
+A pertenece a la instancia Conjunto con la que se invoca al metodo, el B es otra instancia tambien de tipo
+Conjunto que se envia por parametro. Si los conjuntos estan vacios se retornara nulo.
+
+Orden: O(n)
+
+Pseudocodigo:
+Precondiciones:
+Los conjuntos deben estar ordenados.
+
+Postcondiciones:
+La variable resultado retornara la union entre conjuntos.
+
+union(otroConjunto)
+COMIENZO
+	resultado <- nuevo Conjunto()
+	actual <- cabeza
+	MIENTRAS actual <> nulo HACER
+		SI resultado.buscar(actual.obtenerEtiqueta()) == nulo ENTONCES
+			resultado.insertar(actual.obtenerEtiqueta(), actual.obtenerDato());
+		FIN SI
+		actual <- actual.obtenerSiguiente()
+	FIN MIENTRAS
+	
+	actual <- otroConjunto.obtenerCabeza()
+	MIENTRAS actual <> nulo HACER
+		SI resultado.buscar(actual.obtenerEtiqueta()) == nulo ENTONCES
+			resultado.insertar(actual.obtenerEtiqueta(), actual.obtenerDato());
+		FIN SI
+		actual <- actual.obtenerSiguiente()
+	FIN MIENTRAS
+	
+	RETORNAR resultado
+FIN
+
+Casos de prueba:
+Conjunto1 = {1, 2, 3, 4, 5} y Conjunto2 = {3, 4, 5, 6, 7}
+Resultado esperado: {1, 2, 3, 4, 5, 6, 7}
+
+
+//Interseccion
+Se debera retornar un conjunto que posea la interseccion logica entre un conjunto A y un conjunto B. El conjunto
+A pertenece a la instancia Conjunto con la que se invoca al metodo, el B es otra instancia tambien de tipo
+Conjunto que se envia por parametro. Si los conjuntos estan vacios se retornara nulo.
+
+Orden: O(n)
+
+Pseudocodigo:
+Precondiciones:
+Los conjuntos deben estar ordenados.
+
+Postcondiciones:
+La variable resultado retornara la interseccion entre conjuntos.
+
+interseccion(otroConjunto)
+COMIENZO
+	resultado <- nuevo Conjunto()
+	actual <- cabeza
+	MIENTRAS actual <> nulo HACER
+		SI resultado.buscar(actual.obtenerEtiqueta()) == nulo AND 
+		otroConjunto.buscar(actual.obtenerEtiqueta()) <> nulo ENTONCES
+			resultado.insertar(actual.obtenerEtiqueta(), actual.obtenerDato());
+		FIN SI
+		actual <- actual.obtenerSiguiente()
+	FIN MIENTRAS
+
+	RETORNAR resultado
+FIN
+
+Casos de prueba:
+Conjunto1 = {1, 2, 3, 4, 5} y Conjunto2 = {3, 4, 5, 6, 7}
+Resultado esperado: {3, 4, 5}
+
+
+
+
+
+
+

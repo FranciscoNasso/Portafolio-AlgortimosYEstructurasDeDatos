@@ -1,0 +1,46 @@
+#1
+Opcion a) inserta "otroNodo" en la lista, quedando como anterior a nodo1.
+
+#2
+Opcion c) Elimina nodo2 de la lista.
+
+#3
+Opcion b) Inserta "otroNodo" en la lista, quedando entre nodo1 y nodo2.
+
+#4
+Opcion d) El algoritmo esta mal hecho, ya que dara siempre error en tiempo de ejecucion.
+
+#5
+Opcion a) Inserta correctamente "otroNodo" en la lista, quedando como ultimo nodo.
+
+#6
+a) La lista encadenada cuesta mas memoria que el arreglo, ya que tiene referencias cada nodo y al siguiente.
+Ya que no se conoce un numero de alumnos en concreto, y este puede variar hasta el final de las inscripciones,
+el costo de memoria no puede ser un numero, debe ser expresado como una formula.
+
+LinkedList:
+Costo de memoria = tamaño del objeto LinkedList + (número de elementos * tamaño del objeto ListNode)
+
+Array:
+Costo de memoria = tamaño del objeto Array + (número de elementos * tamaño del tipo de dato)
+
+Para 10 objetos del tipo alumno (considerando que cada objeto son 8bytes) el costo en memoria de cada uno seria:
+Linked List:
+32 + (10 * 16) (16 porque el Nodo acumula una referencia al objeto y al siguiente, o sea 8*2)
+192 bytes.
+
+Array:
+12 + (10 * 8)
+92 bytes.
+
+b) Visto que la cantidad de alumnos puede variar ya que el periodo de inscripciones es largo, la mejor opcion
+a implementar seria una LinkedList, ya que no necesita ser redimensionada como el Array, lo cual haria que el
+programa sea mas eficiente y sostenible en el tiempo. En el caso de que las inscripciones sean limitadas, y
+se conozca ya el numero de alumnos maximo que puede haber en el curso, seria considerablemente mejor implementar
+un Array, siempre y cuando no necesitemos redimensionarlo.
+
+
+
+
+
+

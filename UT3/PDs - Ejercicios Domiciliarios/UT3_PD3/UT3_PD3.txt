@@ -1,0 +1,154 @@
+#1
+// "Crear los elementos y la lista"
+Se deberá crear uno o más nodos indicando su valor (una variable entera, cadena de caracteres, etc), y su
+etiqueta (una cadena de caracteres meramente representativa). A continuación, se debera crear la lista.
+
+Pseudocodigo:
+Precondiciones:
+El parametro de ClaseNodo "dato" no puede ser nulo, pero si cualquier tipo.
+El parametro etiqueta debe ser una cadena de caracteres.
+
+Postcondicioens:
+La instancia de ClaseNodo "nodo" debe tener asociadio el tipo y la etiqueta que le ingresamos y su nodo 
+siguiente debe ser nulo.
+La instancia de ClasLista "lista" debe ser una lista vacia cuya unica referencia debe ser a un primer nodo
+y la misma debe ser null.
+
+ClaseNodo(tipo, etiqueta)
+COMIENZO
+	dato <- tipo
+	siguente <- nulo
+	etiqueta <- etiqueta
+FIN
+
+ClaseLista()
+COMIENZO
+	cabeza <- nulo
+FIN
+
+nodo <- nuevo ClaseNodo(dato, etiqueta)
+lista <- nuevo ClaseLista()
+
+
+
+// "Insertar un elemento en la lista (al final, la lista no esta ordenada)
+Se debera insertar un nuevo nodo en una lista, el metodo se encargara de verificar si la lista esta vacia o no.
+Si la lista esta vacia el nodo que se insertara se insertara como el primero, por lo tanto la referencia al
+primer nodo ahora debe apuntar a este. Si la lista no esta vacia se debera recorrer la lista hasta llegar al
+ultimo nodo, el que apunta a null, y luego actualizar ese ultimo nodo para que ahora apunte al nodo que se
+va a insertar.
+
+Pseudocodigo:
+Precondiciones:
+El nuevo nodo y la lista ya deben haber sido instanciados anteriormente.
+
+Postcondiciones:
+La lista ahora contrendra un nuevo nodo al final, o en caso de que este vacia el nodo sera la cabeza.
+
+insertar(nodo)
+COMIENZO
+
+SI la lista esta vacia ENTONCES
+	cabeza <- nodo
+SINO
+	actual <- cabeza
+	MIENTRAS cabeza.obtenerSiguiente() <> nulo HACER
+		cabeza <- cabeza.obtenerSiguiente()
+	FIN MIENTRAS
+	cabeza.colocarSigiente(nodo)
+FIN SI
+
+FIN
+
+//"Buscar uin elemento en una lista"
+Se debera buscar un nodo dentro de la lista. Se buscara el nodo segun la clave que se proporcione, si la clave
+coincide con alguna clave de algun metodo de la lista, se devolvera ese nodo, en caso contrario se devolvera
+nulo.
+
+Pseudocodigo:
+Precondiciones:
+La lista no debe estar vacia. La clave debe ser una cadena de caracteres
+
+Postcondiciones:
+La variable actual sera el objeto buscado
+
+buscar(clave)
+COMIENZO
+	actual <- cabeza
+	MIENTRAS actual <> nulo AND actual.obtenerEtiqueta() <> clave HACER
+		actual <- actual.obtenerSiguiente()
+	FIN MIENTRAS
+
+	RETORNAR actual
+FIN
+
+//"Listar (imprmir) todos los elementos de una lista"
+Se deberan imprimir por consola todos los elementos que contenga la lista.
+
+Pseudocodigo:
+Precondiciones:
+La lista debe tener uno o mas elementos. Si no, se imprimira nulo.
+
+Postcondiciones:
+N/A
+
+imprmir()
+COMIENZO
+	resultado <- nulo
+	actual <- cabeza
+	MIENTRAS actual <> nulo HACER
+		resultado = resultado + actual.obtenerEtiqueta() + salto de linea
+		actual = actual.obtenerSiguiente()
+	FIN MIENTRAS
+
+	MOSTRAR EN CONSOLA resutado 
+	RETORNAR resultado 
+FIN
+
+//"Eliminar un elemento de una lista, dada su clave
+Se debera eliminar un elemento de la lista, dada su clave.
+
+Pseudocodigo:
+Precondiciones:
+La lista debe tener uno o mas elementos. La clave debe ser una cadena de caracteres
+
+Postcondiciones:
+La posicion de la lista en donde estaba el elemento eliminado sera ocupada por su siguiente elemento.
+La variable eliminada sera verdadero o falso dependiendo si se elimino o no el objeto.
+
+eliminar(clave)
+COMIENZO
+	eliminado <- falso
+	actual <- cabeza.obtenerSiguiente
+	anterior <- cabeza
+	MIENTRAS actual <> nulo AND eliminado <> verdadero
+		SI actual.obtenerEtiqueita() == clave ENTONCES
+			anterior.colocarSiguiente(actual.obtenerSiguiente)
+			eliminado <- verdadero
+		SI NO
+			anterior <- actual
+			actual <- actual.obtenerSiguiente()
+		FIN SI
+	FIN MIENTRAS
+	RETORNAR eliminado
+FIN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

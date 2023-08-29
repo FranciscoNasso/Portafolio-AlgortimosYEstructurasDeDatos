@@ -1,0 +1,42 @@
+//PoneEnCola
+Precondiciones:
+La cola no esta llena.
+"elemento" es el elemento a agregar a la cola
+
+Postcondiciones:
+Si la cola estaba vacía antes de llamar a esta operación, ahora tiene un elemento.
+Si la cola no estaba vacía antes de llamar a esta operación, ahora tiene un elemento más.
+Si la cola estaba llena antes de llamar a esta operación, la operación falla y no se modifica la cola.
+
+PoneEnCola(elemento)
+COMIENZO
+	SI (cola.fin + 1) % TamñoVector == cola.inicio ENTONCES
+		RETORNAR "Error, la cola esta llena"
+	SI NO
+		cola.vector[cola.fin] <- elemento
+		cola.fin <- (cola.fin + 1) % TamñoVector
+	FIN SI
+FIN
+
+//QuitaDeCola
+Precondiciones:
+La cola no está vacía.
+
+Postcondiciones:
+Si la cola tenía un solo elemento antes de llamar a esta operación, ahora está vacía.
+Si la cola tenía más de un elemento antes de llamar a esta operación, ahora tiene un elemento menos.
+Si la cola estaba vacía antes de llamar a esta operación, la operación falla y no se modifica la cola.
+
+QuitaDeCola()
+COMIENZO
+	SI cola.inicio == cola.fin ENTONCES
+		RETORNAR "Error, la cola esta vacia"
+	SI NO
+		elemento <- cola.vector[cola.inicio]
+		cola.inicio <- (cola.inicio + 1) % TamñoVector
+		RETORNAR elemento
+	FIN SI
+FIN
+
+
+

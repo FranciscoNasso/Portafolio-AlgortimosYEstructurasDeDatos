@@ -1,0 +1,11 @@
+#2
+La implementacion del ArrayList es mas rapida y segura ya que es una implementacion propia de java, cuyos
+metodos ya han sido previamente escritos y testeados. En nuestro caso, la clase TDA Lista es creada por
+nosotros mismos, eso lo hace insegura, ademas del tiempo que tardamos en crear la estructura en si.
+
+3#
+El ArrayList consume casi 200 bytes menos de memoria debido a que posee menos referencias 
+(Ejemplo para 10 elementos).
+
+4#
+Son de orden O(n)
