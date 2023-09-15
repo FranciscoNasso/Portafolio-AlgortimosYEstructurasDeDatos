@@ -1,0 +1,60 @@
+#5.20
+buscarEntero(arr[])
+COM
+	izquierda <- 0
+	derecha <- arr.largo - 1
+	
+	MIENTRAS izquieda <= derecha HACER
+		medio <- (izquieda + derecha) / 2
+	
+		SI arr[medio] == medio ENTONCES
+			RETORNAR verdadero
+		SI NO SI arr[medio] < medio ENTONCES
+			izquierda = medio + 1
+		SI NO 
+			derecha = medio - 1
+		FIN SI
+	FIN MINETRAS
+	RETORNAR falso
+FIN
+
+- El tiempo de ejecucion del algoritmo es de O(log n) ya que en cada iteracion se reduce el tama;o del rango de busqueada a la mitad.
+
+
+#5.23
+buscarElementoMayoritario(arreglo[])
+COM
+    candidato <- 0
+    contador <- 0
+
+    // Buscamos un candidato para elemento mayoritario
+    PARA i DESDE 0 HASTA arreglo.largo - 1 HACER
+        SI contador = 0 ENTONCES
+            candidato <- arreglo[i]
+            imprimir candidato
+            contador <- 1
+        SI NO SI arreglo[i] = candidato ENTONCES
+            contador <- contador + 1
+        SI NO
+            contador <- contador - 1
+        FIN SI
+    FIN PARA
+
+    // Verificamos si el candidato es el elemento mayoritario
+    contador <- 0
+    PARA i DESDE 0 HASTA arreglo.largo - 1 HACER
+        SI arreglo[i] = candidato ENTONCES
+            contador <- contador + 1
+        FIN SI
+    FIN PARA
+
+    // Retornamos el candidato si este aparece mas de N/2 veces
+    SI contador > arreglo.largo / 2 ENTONCES
+        RETORNAR candidato
+    SI NO
+        RETORNAR -1
+    FIN SI
+FIN
+
+- El algoritmo de voto mayoritario Boyer-Moore tiene una complejidad en tiempo de ejecucion de O(N)
+		

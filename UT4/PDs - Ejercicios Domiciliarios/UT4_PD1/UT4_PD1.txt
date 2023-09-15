@@ -1,0 +1,99 @@
+#1
+Lista de letras:
+T,Y,U,P,L,K,J,S,A,Z,X,C,V,N
+
+Arbol generado:
+             T
+           /   \
+          P     Y
+         / \   / \
+        L   S U   Z
+       / \     \
+      K   N     X
+     /         /
+    J         V
+   /
+  A
+   \
+    C
+
+¿Cuál de las siguientes afirmaciones es correcta?
+a) El árbol tiene altura 7.
+b) “Y” es ancestro de “C”.
+c) “X” es descendiente de “P”.
+d) “S” es una hoja.
+
+Respuesta: d)
+
+En el árbol resultante (indica la respuesta correcta y analiza por qué las demás no lo son):
+a) El árbol tiene cinco hojas.
+b) “V” es descendiente de “S”
+c) “K” es hermano de “J”
+d) “A” y “X” están al mismo nivel
+
+Respuesta: a)
+
+Para imprimir las claves en orden lexicográfico basta con (indica la respuesta correcta y analiza
+por qué las demás no lo son)
+a) recorrer el árbol en PREORDEN.
+b) recorrer el árbol en POSTORDEN.
+c) recorrer el árbol en INORDEN.
+d) debe recorrerse el árbol POR NIVELES.
+
+Respuesta: c)
+
+#2
+1. Este algoritmo, aplicado a la raíz de un árbol, devuelve:
+a) La altura del árbol.
+b) El valor de la expresión aritmética contenida en el árbol.
+c) El grado del árbol.
+d) El tamaño del árbol.
+
+Respuesta: a)
+
+2. El orden del tiempo de ejecución del algoritmo (analízalo cuidadosamente) es:
+a) O(n)
+b) O(1)
+c) O(log2n)
+d) O(n2)
+
+Respuesta: c) (si el arbol esta equilibrado, o sea el mejor de los casos)
+
+#3
+1.
+	12
+       /  \
+      1    25
+       \   / \
+        2 14  33
+         \     \
+          7    88
+         /     / \ 
+        5     45 99
+               \
+               66
+
+a.
+PreOrden: 12-1-3-2-7-4-25-14-88-45-66-99
+InOrden: 1-2-3-4-7-12-14-25-45-66-88-99
+PostOrden: 2-4-7-3-1-14-66-45-99-88-25-12
+
+2.
+	14
+       /  \
+      1    25
+       \     \
+        5     45
+         \     \
+          7    88
+               / 
+              66 
+               
+a.
+PreOrden: 7-1-3-4-25-14-88-45-66
+InOrden: 1-3-4-7-14-25-45-66-88
+PostOrden: 4-3-1-14-66-45-88-25-7
+               
+
+
+

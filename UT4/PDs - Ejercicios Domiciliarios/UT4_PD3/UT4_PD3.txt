@@ -1,0 +1,175 @@
+#1
+//Descripción en lenguaje natural:
+Este algoritmo recibe un elemento y lo inserta en un árbol binario de búsqueda. Primero verifica si el árbol está vacío, en cuyo caso coloca el elemento en la raíz. 
+Si no está vacío, compara la etiqueta del elemento con la de la raíz y lo inserta en el subárbol izquierdo o derecho según corresponda. 
+Si la etiqueta del elemento ya existe en el árbol, retorna false indicando que no se pudo insertar.
+
+//Precondiciones:
+El árbol binario de búsqueda debe estar inicializado.
+
+//Postcondiciones:
+Se agrega un nuevo elemento al árbol binario de búsqueda si es que no existe previamente.
+Se retorna un valor booleano que indica si el elemento fue insertado con éxito.
+Se mantiene la propiedad de orden de un árbol binario de búsqueda.
+
+Pseudo:
+//En la clase Arbol:
+insertar(unElemento)
+COMENZAR
+	SI esVacio() ENTONCES
+		raiz <- unElemento
+		RETORNAR verdadero
+	SINO
+		RETORNAR raiz.insertar(unElemento)
+	FIN SI
+FIN
+
+//En la clase Nodo:
+insertar(unElemento)
+COMENZAR
+    cantidadInserciones <- cantidadInserciones + 1
+    SI unElemento.getEtiqueta() < etiqueta ENTONCES
+        SI hijoIzq <> nulo ENTONCES
+            hijoIzq.insertar(unElemento)
+        SI NO
+            hijoIzq <- unElemento
+            RETORNAR verdadero
+        FIN SI
+    SI NO SI unElemento.getEtiqueta() > etiqueta ENTONCES
+        SI hijoDer <> nulo ENTONCES
+            hijoDer.insertar(unElemento)
+        SI NO
+            hijoDer <- unElemento
+            RETORNAR verdadero
+        FIN SI
+    SI NO
+        RETORNAR falso
+    FIN SI
+FIN
+
+Orden:
+O(log n)
+
+#2
+//Descripción en lenguaje natural:
+El algoritmo cuenta la cantidad de hojas que tiene un árbol binario. Si el árbol está vacío, entonces la cantidad de hojas es cero. 
+Si el árbol no está vacío, se recorre en postorden, verificando si cada nodo es una hoja. Si es hoja, se incrementa un contador. 
+Al final, se devuelve el valor del contador.
+
+//Precondiciones: 
+el método se ejecutará correctamente si el árbol binario ha sido inicializado correctamente con sus elementos correspondientes.
+
+//Postcondiciones: 
+el método devolverá un número entero que representa la cantidad de hojas del árbol.
+
+Pseudo:w
+//En la clase Arbol
+obtenerCantidadHojas()
+COMENZAR
+	SI !esVacio() ENTONCES
+		RETORNAR raiz.obtenerCantidadHojas();
+	FIN SI
+	RETORNAR 0
+FIN
+
+//En la clase Nodo
+obtenerCantidadHojas()
+COMENZAR
+    SI (esHoja()) ENTONCES
+        DEVOLVER 1
+    SI NO
+        cont <- 0
+        SI (hijoIzq != nulo) ENTONCES
+            cont <- hijoIzq.obtenerCantidadHojas()
+        FIN SI
+        SI (hijoDer != nulo) ENTONCES
+            cont <- cont + hijoDer.obtenerCantidadHojas()
+        FIN SI
+        DEVOLVER cont
+    FIN SI
+FIN
+
+Orden:
+O(n)
+
+#3
+//Descripción en lenguaje natural:
+El método sumarClaves recorre un árbol binario de búsqueda y devuelve la suma de todas las claves que contiene, 
+incluyendo la clave del nodo actual y sus nodos hijos.
+
+//Precondición: el árbol binario de búsqueda debe tener al menos un nodo.
+//Postcondición: se devuelve la suma de todas las claves del árbol binario de búsqueda.
+
+Pseudo:
+
+//En la clase arbol
+sumarClaves()
+COMENZAR
+	SI !esVacio() ENTONCES
+		RETORNAR raiz.sumarClaves();
+	FIN SI
+	RETORNAR 0
+FIN
+
+//En la clase nodo
+sumarClaves()
+COMENZAR
+    suma <- convertirEtiquetaEnEntero()
+    SI hijoIzq <> nulo ENTONCES
+        suma <- suma + hijoIzq.sumarClaves()
+    FIN SI
+    SI hijoDer <> nulo ENTONCES
+        suma <- suma + hijoDer.sumarClaves()
+    FIN SI
+    RETORNAR suma
+FIN
+
+Orden:
+O(n)
+
+#4
+//Descripción en lenguaje natural:
+La función obtenerNivel busca una etiqueta dada en un árbol de búsqueda binario y devuelve el nivel del nodo que contiene la etiqueta. 
+Comienza comparando la etiqueta dada con la etiqueta del nodo actual. Si son iguales, devuelve 0, lo que indica que la etiqueta se encuentra en el nodo actual. 
+Si la etiqueta dada es menor que la etiqueta del nodo actual, la función busca en el subárbol izquierdo del nodo actual. 
+Si la etiqueta dada es mayor que la etiqueta del nodo actual, la función busca en el subárbol derecho del nodo actual. 
+En ambos casos, la función incrementa en 1 el nivel devuelto por la función recursiva del subárbol y lo devuelve como resultado.
+
+//Precondiciones:
+El árbol binario de búsqueda en el que se busca la etiqueta debe existir.
+La etiqueta a buscar debe ser comparable con la etiqueta de los nodos del árbol.
+
+//Postcondiciones:
+Se devuelve el nivel del nodo que contiene la etiqueta dada en el árbol binario de búsqueda.
+
+Pseudo:
+//En la clase Arbol
+obtenerNivel()
+COMENZAR
+	SI !esVacio() ENTONCES
+		RETORNAR raiz.obtenerNivel();
+	FIN SI
+	RETORNAR 0
+FIN
+
+//En la clase Nodo
+obtenerNivel(unaEtiqueta)
+COMENZAR
+    SI unaEtiqueta.esIgualA(etiqueta) ENTONCES
+        RETORNAR 0
+    SI NO SI unaEtiqueta.compareTo(etiqueta) < 0 ENTONCES
+        SI hijoIzq <> nulo ENTONCES
+            RETORNAR 1 + hijoIzq.obtenerNivel(unaEtiqueta)
+        SI NO
+            RETORNAR 0
+        FIN SI
+    SI NO SI hijoDer <> nulo ENTONCES
+        RETORNAR 1 + hijoDer.obtenerNivel(unaEtiqueta)
+    SI NO
+        RETORNAR 0
+    FIN SI
+FIN
+
+Orden:
+O(n)
+

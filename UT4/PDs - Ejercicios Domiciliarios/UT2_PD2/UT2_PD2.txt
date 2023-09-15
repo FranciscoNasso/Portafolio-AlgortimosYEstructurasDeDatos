@@ -1,0 +1,43 @@
+#1
+Factorial(num)
+COM
+	
+	SI num == 0 OR num == 1 ENTONCES
+		RETORNAR 1
+	FIN SI
+	
+	return <- num * Factorial(num - 1)
+FIN
+
+- El caso base ocurre cuando el numero es igual 1 para los casos donde num >= 1, y 0 para cuando num == 0.
+
+- Siempre progresara hacia el caso base si el numero es positivo, ya que se le resta 1 al numero en cada ejecucion del algoritmo.
+
+2) La complejidad del algoritmo es O(N) ya que se ejecuta num-esimas veces.
+
+3)
+- Si el numero es negativo el programa en java dara error de tipo StackOverflow.
+
+- Factorial(5)= 120, Factorial(4)= 24, Factorial(0)= 1.
+
+#2
+SumaLineal(arr[], num)
+COM
+	SI num == 0 ENTONCES
+		RETORNAR 0
+	SI NO
+		RETORNAR arr[num - 1] + SumaLineal(arr[], n - 1)
+	FIN SI
+FIN
+
+- El caso base ocurre cuando el numero de sumas que se va a efectuar es decir "num" llega a 0.
+- Siempre progresara hacia el caso base si el numeor es positivo, ya que se le resta 1 al numero en cada ejecucion del algoritmo.
+
+2) La complejidad del algoritmo es O(N) ya que se ejecuta num-esimas veces.
+
+3)
+- Si el numero es negativo el programa en java dara error de tipo Index out of Bound (ya que no existen posiciones negativas en un array).
+
+- Si el vector esta vacio y num es igual a 0, el programa retornara 0 ya que se suma cero, cero veces. Si el vector esta vacio y num es mayor a 0 el programa dara error de
+tipo Index out of Bound, ya que no hay posiciones en el arreglo, debido a que esta vacio.
+

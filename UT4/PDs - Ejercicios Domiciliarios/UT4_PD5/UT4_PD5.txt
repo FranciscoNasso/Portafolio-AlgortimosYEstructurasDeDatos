@@ -1,0 +1,240 @@
+#1
+a.
+Descripción en lenguaje natural del algoritmo solicitado:
+Este método busca y devuelve la clave más pequeña en el árbol. 
+Comienza verificando si hay un hijo izquierdo, si no lo hay, devuelve la clave de este nodo. 
+Si hay un hijo izquierdo, el método se llama a sí mismo en ese hijo y continúa buscando en ese subárbol hasta que se encuentra el nodo con la clave más pequeña.
+
+Identificación de precondiciones y postcondiciones correspondientes:
+Precondiciones: El árbol no está vacío.
+Postcondiciones: Devuelve la clave más pequeña en el árbol.
+
+Escritura del algoritmo en seudocódigo formal:
+//TArbolBB
+obtenerMenorClave()
+COMENZAR
+	SI !esVacio() ENTONCES
+		RETORNAR raiz.obtenerMenorClave()
+	FIN SI
+	RETORNAR -1
+FIN
+
+
+//TElementoAB
+obtenerMenorClave()
+COMENZAR
+	SI hijoIzq == nulo ENTONCES
+		RETORNAR etiqueta
+	FIN SI
+	RETORNAR hijoIzq.obtenerMenorClave()
+FIN
+
+Análisis detallado del orden del tiempo de ejecución del algoritmo:
+O(log n).
+
+b.
+Descripción en lenguaje natural del algoritmo solicitado:
+Este método busca y devuelve la clave más grande en el árbol. Comienza verificando si hay un hijo derecho, si no lo hay, devuelve la clave de este nodo. 
+Si hay un hijo derecho, el método se llama a sí mismo en ese hijo y continúa buscando en ese subárbol hasta que se encuentra el nodo con la clave más grande.
+
+Identificación de precondiciones y postcondiciones correspondientes:
+Precondiciones: El árbol no está vacío.
+Postcondiciones: Devuelve la clave más grande en el árbol.
+
+Escritura del algoritmo en seudocódigo formal:
+//TArbolBB
+obtenerMayorClave()
+COMENZAR
+	SI !esVacio() ENTONCES
+		RETORNAR raiz.obtenerMayorClave()
+	FIN SI
+	RETORNAR -1
+FIN
+
+//TElementoAB
+obtenerMayorClave()
+COMENZAR
+	SI hijoDer == nulo ENTONCES
+		RETORNAR etiqueta
+	FIN SI
+	RETORNAR hijoDer.obtenerMayorClave()
+FIN
+
+Análisis detallado del orden del tiempo de ejecución del algoritmo:
+O(log n)
+
+c.
+Descripción en lenguaje natural del algoritmo solicitado:
+Este método busca en el árbol binario de búsqueda el valor de la clave anterior a una clave dada. 
+Compara la clave dada con la clave del nodo actual y, si es menor, busca en el subárbol izquierdo. Si es mayor, busca en el subárbol derecho. 
+Si se encuentra el nodo con la clave dada, devuelve la clave del nodo actual, que es la clave anterior. Si no se encuentra la clave, devuelve nulo.
+
+Identificación de precondiciones y postcondiciones correspondientes:
+Precondiciones:
+- El árbol binario de búsqueda no es nulo.
+- La clave a buscar no es nula.
+Postcondiciones:
+- Si se encuentra el nodo con la clave dada, se devuelve la clave anterior a la dada.
+- Si no se encuentra la clave, se devuelve nulo.
+
+Escritura del algoritmo en seudocódigo formal:
+//TArbolBB
+obtenerClaveAnterior(clave)
+COMENZAR
+	SI !esVacio() ENTONCES
+		RETORNAR raiz.obtenerClaveAnterior(clave)
+	FIN SI
+	RETORNAR -1
+FIN
+
+//TElementoAB
+obtenerClaveAnterior(clave)
+COMENZAR
+    SI clave.compareTo(etiqueta) < 0 ENTONCES
+        SI hijoIzq <> nulo ENTONCES
+            SI hijoIzq.getEtiqueta().equals(clave) ENTONCES
+                RETORNAR etiqueta
+            SI NO
+                RETORNAR hijoIzq.obtenerClaveAnterior(clave)
+            FIN SI
+        FIN SI
+    SI NO SI clave.compareTo(etiqueta) > 0 ENTONCES
+        SI hijoDer <> nulo ENTONCES
+            SI hijoDer.getEtiqueta().equals(clave) ENTONCES
+                RETORNAR etiqueta
+            SI NO
+                RETORNAR hijoDer.obtenerClaveAnterior(clave)
+            FIN SI
+        FIN SI
+    FIN SI
+    RETORNAR nulo
+FIN
+
+Análisis detallado del orden del tiempo de ejecución del algoritmo:
+O(log n)
+
+d.
+Descripción en lenguaje natural del algoritmo solicitado:
+
+El método "nodoNivel" recibe como entrada un entero "n" que representa el nivel del nodo a contar, y otro entero "nivel" que representa el nivel actual de la búsqueda. 
+Este método cuenta la cantidad de nodos que se encuentran en el nivel "n" de un árbol binario, considerando la raíz como nivel 0. 
+
+Identificación de precondiciones y postcondiciones correspondientes:
+
+Precondiciones:
+- El árbol binario en el cual se busca el nodo debe estar creado y no ser nulo.
+- Los valores de "n" y "nivel" deben ser enteros no negativos.
+
+Postcondiciones:
+- Se retorna un entero que representa la cantidad de nodos en el nivel "n" del árbol binario.
+
+Escritura del algoritmo en seudocódigo formal:
+//TArbolBB
+nodoNivel(nivel)
+COMENZAR
+	SI !esVacio() ENTONCES
+		RETORNAR raiz.nodoNivel(1, nivel)
+	FIN SI
+	RETORNAR -1
+FIN
+
+//TElementoAB
+nodoNivel(n, nivel)
+COMENZAR
+    SI n = nivel ENTONCES
+        RETORNAR 1
+    cant <- 0
+    SI hijoIzq <> nulo ENTONCES
+        cant <- hijoIzq.nodoNivel(n + 1, nivel)
+    SI hijoDer <> nulo ENTONCES
+        cant <- cant + hijoDer.nodoNivel(n + 1, nivel)
+    RETORNAR cant
+FIN
+
+Análisis detallado del orden del tiempo de ejecución del algoritmo:
+O(n).
+
+e.
+Descripción en lenguaje natural del algoritmo solicitado: 
+
+El metodo listarHoja recorre un árbol binario de búsqueda y, para cada nodo hoja encontrado, muestra su etiqueta y su nivel dentro del árbol.
+
+Identificación de precondiciones y postcondiciones correspondientes: 
+
+Precondiciones:
+- El árbol binario de búsqueda debe existir.
+- El nivel inicial debe ser proporcionado por el usuario.
+
+Postcondiciones:
+- Se muestran por pantalla las etiquetas y niveles de los nodos hoja del árbol.
+
+Escritura del algoritmo en seudocódigo formal:
+//TArbolBB
+listarHoja()
+COMENZAR
+	SI !esVacio() ENTONCES
+		raiz.listarHoja(1)
+	FIN SI
+FIN
+
+//TElementoAB
+listarHoja(n)
+COMENZAR
+    SI hijoIzq == NULO Y hijoDer == NULO ENTONCES
+        IMPRIMIR("Etiqueta: " + etiqueta + ", Nivel: " + n)
+    FIN SI
+    SI hijoIzq != NULO ENTONCES
+        hijoIzq.listarHoja(n + 1)
+    FIN SI
+    SI hijoDer != NULO ENTONCES
+        hijoDer.listarHoja(n + 1)
+    FIN SI
+FIN
+
+Análisis detallado del orden del tiempo de ejecución del algoritmo:
+O(n)
+
+f.
+Descripción en lenguaje natural del algoritmo solicitado:
+El método verificarArbol() recorre el árbol binario de búsqueda en orden, verificando si cada nodo es mayor o igual a su hijo izquierdo y menor o igual a su hijo derecho. 
+Si se encuentra un nodo que no cumple esta condición, el método devuelve falso. Si todos los nodos cumplen la condición, el método devuelve verdadero.
+
+Identificación de precondiciones y postcondiciones correspondientes:
+Precondición: El método debe ser llamado en un nodo de un árbol binario de búsqueda.
+Postcondición: El método devuelve verdadero si el árbol binario de búsqueda cumple con las condiciones de ser un árbol binario de búsqueda, de lo contrario devuelve falso.
+
+Escritura del algoritmo en seudocódigo formal:
+//TArbolBB
+verificarArbol()
+COMENZAR
+	SI !esVacio() ENTONCES
+		RETORNAR raiz.verificarArbol()
+	FIN SI
+	RETORNAR falso
+FIN
+
+//TElementoAB
+verificarArbol()
+COMENZAR
+    verificar <- verdadero
+    SI hijoIzq <> nulo ENTONCES
+        SI hijoIzq.getEtiqueta().compareTo(etiqueta) > 0 ENTONCES
+            verificar <- falso
+        SI NO ENTONCES
+            verificar <- hijoIzq.verificarArbol()
+        FIN SI
+    FIN SI
+    SI hijoDer <> nulo Y verificar ENTONCES
+        SI hijoDer.getEtiqueta().compareTo(etiqueta) < 0 ENTONCES
+            verificar <- falso
+        SI NO ENTONCES
+            verificar <- hijoDer.verificarArbol()
+        FIN SI
+    FIN SI
+    RETORNAR verificar
+FIN
+
+5. Análisis detallado del orden del tiempo de ejecución del algoritmo:
+O(n)
+
+
